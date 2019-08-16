@@ -11,7 +11,7 @@ exports.up = function(knex) {
       tbl
         .boolean('completed')
         .notNullable()
-        .defaultTo(false); //<----might need to be string
+        .defaultTo(0); //<----might need to be string
     })
 
     .createTable('tasks', tbl => {
@@ -21,7 +21,7 @@ exports.up = function(knex) {
       tbl
         .boolean('completed')
         .notNullable()
-        .defaultTo(false); //<----might need to be string
+        .defaultTo(0); //<----might need to be string
       tbl
         .integer('project_id')
         .unsigned()

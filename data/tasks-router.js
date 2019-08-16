@@ -7,9 +7,17 @@ const router = express.Router();
 // [ ] adding tasks.
 
 router.get('/', (req, res) => {
+  console.log(req.body);
   tasks
     .getTasks()
     .then(tasks => {
+      tasks.map(task => {
+        if (task.completed === 0) {
+          task.completed = false;
+        } else {
+          task.completed = true;
+        }
+      });
       res.status(200).json(tasks);
     })
     .catch(err => {

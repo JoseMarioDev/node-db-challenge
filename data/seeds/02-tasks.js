@@ -4,19 +4,19 @@ exports.seed = function(knex, Promise) {
       project_id: '1',
       task_description: 'buy boxes',
       notes: 'get them from the store',
-      completed: 'false',
+      completed: 1,
     },
     {
       project_id: '2',
       task_description: 'new handles',
       notes: 'buy new door handles from hardware store',
-      completed: 'false',
+      completed: 0,
     },
     {
       project_id: '3',
       task_description: 'medication',
       notes: 'take all required meds before visit',
-      completed: 'false',
+      completed: 0,
     },
   ]);
 };

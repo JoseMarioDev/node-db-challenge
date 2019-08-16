@@ -3,17 +3,17 @@ exports.seed = function(knex, Promise) {
     {
       project_name: 'pack',
       project_description: 'box up belongings for new house',
-      completed: 'false',
+      completed: 1,
     },
     {
       project_name: 'doors',
       project_description: 'replace screen doors',
-      completed: 'false',
+      completed: 0,
     },
     {
       project_name: 'surgery',
       project_description: 'follow doctors orders',
-      completed: 'false',
+      completed: 0,
     },
   ]);
 };

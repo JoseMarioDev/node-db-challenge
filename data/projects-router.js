@@ -9,6 +9,13 @@ router.get('/', (req, res) => {
   projects
     .getProjects()
     .then(projects => {
+      projects.map(project => {
+        if (project.completed === 0) {
+          project.completed = false;
+        } else {
+          project.completed = true;
+        }
+      });
       res.status(200).json(projects);
     })
     .catch(err => {
