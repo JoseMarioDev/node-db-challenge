@@ -16,7 +16,6 @@ exports.up = function(knex) {
 
     .createTable('tasks', tbl => {
       tbl.increments();
-      tbl.string('ingredient_name', 255).notNullable();
       tbl.string('description', 4000).notNullable();
       tbl.string('notes', 4000);
       tbl
@@ -24,10 +23,13 @@ exports.up = function(knex) {
         .notNullable()
         .defaultTo(false); //<----might need to be string
       tbl
+        .integer('project_id')
+        .unsigned()
+        .notNullable()
         .references('id')
         .inTable('projects')
-        .onDelete('RESTRICT')
-        .onUpdate('CASCADE'); // if the PK on primary table changes, what to do?
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
     })
 
     .createTable('resources', tbl => {
@@ -45,7 +47,7 @@ exports.up = function(knex) {
         .references('id')
         .inTable('projects')
         .onDelete('RESTRICT')
-        .onUpdate('CASCADE'); // if the PK on primary table changes, what to do?
+        .onUpdate('CASCADE');
       tbl
         .integer('resource_id')
         .unsigned()
@@ -53,7 +55,7 @@ exports.up = function(knex) {
         .references('id')
         .inTable('resources')
         .onDelete('RESTRICT')
-        .onUpdate('CASCADE'); // if the PK on primary table changes, what to do?
+        .onUpdate('CASCADE');
     });
 };
 
