@@ -2,19 +2,13 @@ const db = require('./db-config');
 
 module.exports = {
   getProjects,
-  //getShoppingList,
-  //getInstructions,
+  addProject,
 };
 
 function getProjects() {
   return db('projects');
 }
-//should return ingredients and quantities for a given recipe
-// function getShoppingList(id) {
-//   console.log(id);
-//   return db('recipes as r')
-//     .innerJoin('recipes_ingredients as ri', 'r.id', '=', 'ri.recipe_id') //<--FK on this tble , PK on recipe tble
-//     .innerJoin('ingredients as i', 'i.id', '=', 'ri.ingredient_id')
-//     .select('r.recipe_name', 'i.ingredient_name', 'ri.quantity')
-//     .where({ 'r.id': id });
-// }
+
+function addProject(project) {
+  return db('projects').insert(project);
+}

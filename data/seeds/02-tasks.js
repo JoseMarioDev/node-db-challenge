@@ -2,19 +2,19 @@ exports.seed = function(knex, Promise) {
   return knex('tasks').insert([
     {
       project_id: '1',
-      description: 'buy boxes',
+      task_description: 'buy boxes',
       notes: 'get them from the store',
       completed: 'false',
     },
     {
       project_id: '2',
-      description: 'new handles',
+      task_description: 'new handles',
       notes: 'buy new door handles from hardware store',
       completed: 'false',
     },
     {
       project_id: '3',
-      description: 'medication',
+      task_description: 'medication',
       notes: 'take all required meds before visit',
       completed: 'false',
     },
