@@ -4,10 +4,6 @@ const projects = require('./projects-model');
 
 const router = express.Router();
 
-// [ ] adding resources.
-// [ ] adding projects.
-// [ ] adding tasks.
-
 // retrieve list of projects
 router.get('/', (req, res) => {
   projects
@@ -20,6 +16,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//add project
 router.post('/', (req, res) => {
   const project = req.body;
   projects

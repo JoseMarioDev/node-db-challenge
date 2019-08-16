@@ -18,6 +18,5 @@ function getTasks() {
 }
 
 function addTask(task) {
-  console.log('tasks is...', task);
   return db('tasks').insert(task);
 }

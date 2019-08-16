@@ -21,7 +21,6 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const task = req.body;
-  console.log(task);
   tasks
     .addTask(task)
     .then(task => {
